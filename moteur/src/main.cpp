@@ -91,9 +91,9 @@ void display_return_ESCAPE(ImFont* fontMenu) {
     float yPos_ret = (ImGui::GetWindowHeight() - ImGui::CalcTextSize("Return").y) * 0.5f;
     ImGui::SetCursorPosX(xPos_ret);
     ImGui::SetCursorPosY(yPos_ret);
-    ImGui::SetWindowPos(ImVec2(0, SCR_HEIGHT - ImGui::GetWindowHeight()));        
     ImGui::SetWindowSize(ImVec2(205, 55));  
-            
+    ImGui::SetWindowPos(ImVec2(0, SCR_HEIGHT - ImGui::GetWindowHeight()));        
+        
     ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0, 0, 0, 0));
     if (ImGui::Button("Return"))
     {
@@ -118,9 +118,9 @@ void display_return_SETTINGS(ImFont* fontMenu) {
     float yPos_ret = (ImGui::GetWindowHeight() - ImGui::CalcTextSize("Return").y) * 0.5f;
     ImGui::SetCursorPosX(xPos_ret);
     ImGui::SetCursorPosY(yPos_ret);
-    ImGui::SetWindowPos(ImVec2(0, SCR_HEIGHT - ImGui::GetWindowHeight()));        
     ImGui::SetWindowSize(ImVec2(205, 55));  
-            
+    ImGui::SetWindowPos(ImVec2(0, SCR_HEIGHT - ImGui::GetWindowHeight()));        
+
     ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0, 0, 0, 0));
     if (ImGui::Button("Return"))
     {
@@ -145,8 +145,8 @@ void display_return_CREDITS(ImFont* fontMenu) {
     float yPos_ret = (ImGui::GetWindowHeight() - ImGui::CalcTextSize("Return").y) * 0.5f;
     ImGui::SetCursorPosX(xPos_ret);
     ImGui::SetCursorPosY(yPos_ret);
-    ImGui::SetWindowPos(ImVec2(0, SCR_HEIGHT - ImGui::GetWindowHeight()));        
     ImGui::SetWindowSize(ImVec2(205, 55));  
+    ImGui::SetWindowPos(ImVec2(0, SCR_HEIGHT - ImGui::GetWindowHeight()));        
             
     ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0, 0, 0, 0));
     if (ImGui::Button("Return"))
@@ -338,7 +338,6 @@ int main(int argc, char* argv[]) {
 
         view = player->get_view_matrix();
         proj = player->get_projection_matrix();
-
 
         // Draw moving cube
         obst2_node->draw(view,proj);    
@@ -792,7 +791,7 @@ int main(int argc, char* argv[]) {
                 float imguiWindowSizeee = ImGui::GetWindowSize().x;
                 float sliderPosOffsetVolume = imguiWindowSizeee / 4;
                 float sliderPosXVolume = (contentWidth - sliderWidth) * 0.5f - sliderPosOffsetVolume;
-                ImGui::SetCursorPosX(sliderPosXVolume);;
+                ImGui::SetCursorPosX(sliderPosXVolume);
                 ImGui::SliderFloat("##Volume", &volume, 0.0f, 1.f);
 
                 ImGui::SetCursorPosX(textPosXCom);
@@ -805,7 +804,7 @@ int main(int argc, char* argv[]) {
                 float buttonWidth = 25;
                 float totalButtonWidth = 2 * buttonWidth;
                 float spaceBetweenButtons = imguiWindowSizeeee - totalButtonWidth;
-                float offsetX = (SCR_WIDTH / 2.85); 
+                float offsetX = (SCR_WIDTH / 3.); 
                 ImGui::SetCursorPosX(offsetX);
                 if(ImGui::Checkbox("AZERTY", &AZERTY)) {
                     player->get_camera()->mode_cam = 1;
@@ -897,7 +896,7 @@ int main(int argc, char* argv[]) {
                 float buttonWidth = 25;
                 float totalButtonWidth = 2 * buttonWidth;
                 float spaceBetweenButtons = imguiWindowSizeeee - totalButtonWidth;
-                float offsetX = (SCR_WIDTH / 4); 
+                float offsetX = (SCR_WIDTH / 3); 
                 ImGui::SetCursorPosX(offsetX);
                 if(ImGui::Checkbox("AZERTY", &AZERTY)) {
                     player->get_camera()->mode_cam = 1;
@@ -914,7 +913,7 @@ int main(int argc, char* argv[]) {
                 ImGui::Text("Fullscreen :");
 
                 float checkboxWidth = ImGui::CalcTextSize("").x;
-                float offsetXFSC = (SCR_WIDTH - checkboxWidth) / 2.65;
+                float offsetXFSC = (SCR_WIDTH - checkboxWidth) / 2.55;
                 ImGui::SetCursorPosX(offsetXFSC);
                 ImGui::Checkbox("##", &Fullscreen);
                 ImGui::End();
@@ -954,12 +953,12 @@ int main(int argc, char* argv[]) {
 
                 // Center each text horizontally
                 float posX0 = (ImGui::GetWindowWidth() - textSizech0.x) * 0.5f;
-                float posX1 = (ImGui::GetWindowWidth() - textSizech1.x) * 0.53f;
-                float posX2 = (ImGui::GetWindowWidth() - textSizech2.x) * 0.515f;
-                float posX3 = (ImGui::GetWindowWidth() - textSizech3.x) * 0.52f;
+                float posX1 = (ImGui::GetWindowWidth() - textSizech1.x) * 0.54f;
+                float posX2 = (ImGui::GetWindowWidth() - textSizech2.x) * 0.52f;
+                float posX3 = (ImGui::GetWindowWidth() - textSizech3.x) * 0.53f;
                 float posX5 = (ImGui::GetWindowWidth() - textSizech5.x) * 0.5f;
-                float posX6 = (ImGui::GetWindowWidth() - textSizech6.x) * 0.6f;
-                float posX7 = (ImGui::GetWindowWidth() - textSizech7.x) * 0.7f;
+                float posX6 = (ImGui::GetWindowWidth() - textSizech6.x) * 0.61f;
+                float posX7 = (ImGui::GetWindowWidth() - textSizech7.x) * 0.675f;
 
                 float baseY = ImGui::GetCursorPosY() + ImGui::GetWindowHeight() / 8; 
                 float spacing = textSizech1.y * 1.25f;
@@ -1031,12 +1030,12 @@ int main(int argc, char* argv[]) {
 
                 // Center each text horizontally
                 float posX0 = (ImGui::GetWindowWidth() - textSizech0.x) * 0.5f;
-                float posX1 = (ImGui::GetWindowWidth() - textSizech1.x) * 0.56f;
-                float posX2 = (ImGui::GetWindowWidth() - textSizech2.x) * 0.53f;
-                float posX3 = (ImGui::GetWindowWidth() - textSizech3.x) * 0.54f;
+                float posX1 = (ImGui::GetWindowWidth() - textSizech1.x) * 0.54f;
+                float posX2 = (ImGui::GetWindowWidth() - textSizech2.x) * 0.52f;
+                float posX3 = (ImGui::GetWindowWidth() - textSizech3.x) * 0.53f;
                 float posX5 = (ImGui::GetWindowWidth() - textSizech5.x) * 0.5f;
-                float posX6 = (ImGui::GetWindowWidth() - textSizech6.x) * 0.68f;
-                float posX7 = (ImGui::GetWindowWidth() - textSizech7.x) * 0.80f;
+                float posX6 = (ImGui::GetWindowWidth() - textSizech6.x) * 0.6f;
+                float posX7 = (ImGui::GetWindowWidth() - textSizech7.x) * 0.67f;
 
                 float baseY = ImGui::GetCursorPosY() + ImGui::GetWindowHeight() / 8; 
                 float spacing = textSizech1.y * 1.25f;
@@ -1081,9 +1080,6 @@ int main(int argc, char* argv[]) {
 
                 display_return_CREDITS(fontMenu);                
             }
-            ma_sound_stop(&sound);
-            ma_sound_set_looping(&sound2,true);
-            ma_sound_start(&sound2);
         } else {
             ma_sound_stop(&sound2);
             ma_sound_set_looping(&sound,true);
@@ -1165,7 +1161,7 @@ int main(int argc, char* argv[]) {
 
                 ImGui::SetCursorPosX(posX_MetrageMain);
                 ImGui::SetCursorPosY(posY_MetrageMain);
-                ImGui::SetWindowPos(ImVec2(SCR_WIDTH / 4, SCR_HEIGHT / 3 * 2.));
+                ImGui::SetWindowPos(ImVec2(SCR_WIDTH / 4, SCR_HEIGHT / 3));
                 ImGui::SetWindowSize(ImVec2(1000, 400));  
 
                 ImGui::Text("%s", TempsFormaterMenu);
@@ -1275,7 +1271,7 @@ int main(int argc, char* argv[]) {
 
                 ImGui::SetCursorPosX(posX_MetrageMain);
                 ImGui::SetCursorPosY(posY_MetrageMain);
-                ImGui::SetWindowPos(ImVec2(SCR_WIDTH / 6, SCR_HEIGHT / 3));
+                ImGui::SetWindowPos(ImVec2(SCR_WIDTH / 4, SCR_HEIGHT / 3));
                 ImGui::SetWindowSize(ImVec2(1000, 400));  
 
                 ImGui::Text("%s", TempsFormaterMenu);
@@ -1323,10 +1319,12 @@ int main(int argc, char* argv[]) {
                 ImGui::PopStyleVar();
                 ImGui::End();
             }
-        } else {
+        } else if(fin == false && credits == false) {
+            ma_sound_stop(&sound2);
             ma_sound_stop(&sound3);
+
             ma_sound_set_looping(&sound,true);
-            ma_sound_start(&sound); 
+            ma_sound_start(&sound);            
         }
         
         // Render window & ImGui
