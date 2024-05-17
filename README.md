@@ -2,11 +2,12 @@
 
 1. **Cloner le dépôt :**
    ```
-   $ git clone "https://github.com/louis-jean0/HAI819I-moteurjeux"  
+   $ git clone "https://github.com/bserva34/ciment_doux_moteur_de_jeux"  
    ```
 
 2. **Compiler :** 
 ```
+   $ cd moteur
    $ mkdir build
    $ cd build
    $ cmake ..
