@@ -22,5 +22,6 @@
 
 4. **Potentiel Problèmes :**
 
-Si votre ordinateur n'est pas très performant on vous conseille de remplacer le fichier src/scene.cpp par celui dans le dossier ordi_lent.
-Si au moment de compiler il y a des problèmes avec glm on vous conseille de remplacer le CMakelIsts.txt par celui dans le dossier ordi_lent.
+-Si votre ordinateur n'est pas très performant on vous conseille de remplacer le fichier src/scene.cpp par celui dans le dossier ordi_lent.
+
+-Si au moment de compiler il y a des problèmes avec glm on vous conseille de remplacer le CMakelIsts.txt par celui dans le dossier ordi_lent.
